@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ulimit -n 51200
+exec 2>&1
+export PATH=/usr/local/java/bin:$PATH
+cd tomcat/bin
+exec setuidgid tomcat ./catalina.sh run
