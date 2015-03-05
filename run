@@ -3,5 +3,7 @@
 ulimit -n 51200
 exec 2>&1
 export PATH=/usr/local/java/bin:$PATH
+echo $$ > /var/run/tomcat.pid
+chmod +r /var/run/tomcat.pid
 cd tomcat/bin
 exec setuidgid tomcat ./catalina.sh run
